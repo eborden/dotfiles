@@ -1,0 +1,59 @@
+Config { font = "xft:DejaVu Sans Mono:size=9"
+       , pickBroadest = False
+       , bgColor = "#073642"
+       , fgColor = "#839496"
+       , position = Static { xpos = 0 , ypos = 0, width = 3840, height = 65 }
+       , border  = NoBorder
+       , borderColor  = "#002b36"
+       , persistent = True
+       , lowerOnStart = True
+       , hideOnStart = False
+       , allDesktops = True
+       , overrideRedirect = False
+       , commands = [ Run Weather "KNYC" [ "-t", "<tempF>°"
+                                         , "-L", "33"
+                                         , "-H" , "66"
+                                         , "--normal", "#859900"
+                                         , "--high", "#dc322f"
+                                         , "--low", "#268bd2"
+                                         ] 36000
+                    , Run Cpu [ "-L", "3"
+                              , "-H", "50"
+                              , "--normal", "#859900"
+                              , "--high", "#dc322f"
+                              , "-p", "3"
+                              , "-t", "<total>⊡"
+                              ] 300
+                    , Run Network "enp9s0" ["-L","0","-H","1000","--normal","green","--high","red", "-t", "<rx>:<tx>╣"] 10
+                    , Run Network "wlp8s0" ["-L","0","-H","1000","--normal","green","--high","red", "-t", "<rx>:<tx>"] 10
+                    , Run Wireless "wlp8s0" [ "-t", "<quality>░"
+                                            ] 300
+                    , Run Volume "default" "Master" [ "-t", "<volume>♫"
+                                                    --, "-t", "<volume><status>"
+                                                    --, "--off", "♫"
+                                                    --, "--on", "♫"
+                                                    ] 1
+                    , Run Battery [ "-L", "25"
+                                  , "-H", "75"
+                                  , "-t", "<left>⚡"
+                                  , "-h", "#859900"
+                                  , "-l", "#dc322f"
+                                  ] 1000
+                    , Run Memory [ "-t", "<usedratio>ຕ"] 300
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run StdinReader
+                    , Run DiskIO [("/", "<total>✎")] ["-L","0","-H","10000","--normal","green","--high","red"] 10
+                    ]
+       , sepChar = "%" 
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %diskio% %cpu% %memory% %wlp8s0%:%wlp8s0wi% %enp9s0% %KNYC% %default:Master% %battery% | %date% "
+       }
+
+-- S_yellow        #b58900
+-- S_orange        #cb4b16
+-- S_red           #dc322f
+-- S_magenta       #d33682
+-- S_violet        #6c71c4
+-- S_blue          #268bd2
+-- S_cyan          #2aa198
+-- S_green         #859900
