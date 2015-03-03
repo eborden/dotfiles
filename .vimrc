@@ -24,10 +24,11 @@ set encoding=utf8
 set ffs=unix,mac,dos
 
 " Backups
-set backupdir=~/.vim/backup/
-set directory=~/.vim/swap/
-set undodir=~/.vim/undo/
-set undofile
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 
 " Search
 set ignorecase
