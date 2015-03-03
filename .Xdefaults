@@ -1,5 +1,5 @@
-Xcursor.size: 200
-
+Xcursor.theme: Mac_OSX_Aqua
+Xcursor.size: 64
 Xft.dpi: 250
 xterm*faceName: DejaVu Sans Mono:Regular
 xterm*faceSize: 9

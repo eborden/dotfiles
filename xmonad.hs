@@ -1,5 +1,5 @@
 import XMonad
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Run(spawnPipe, runInTerm)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
@@ -50,6 +50,7 @@ newKeys x = \y -> Map.union (Map.fromList
   , ((controlMask .|. myModMask, xK_l), (nextWS))
   --, ((controlMask .|. myModMask, xK_Up), (XMonad.workspaces 1))
   --, ((controlMask .|. myModMask, xK_Down), (XMonad.workspaces 9))
+  , ((myModMask, xK_x), (spawn "xlock -mode random -erasemode no_fade -echokeys"))
   , ((0, xK_fnUp), spawn "xbacklight +10")
   , ((0, xK_fnDown), spawn "xbacklight -10")
   ]) (x y)

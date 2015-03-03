@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/eborden/skedge/lockdown/widgets/mac-widget/mac/app/templates'
+let g:netrw_dirhist_2='/home/eborden/skedge/lockdown/widgets/mac-widget/mac/app/templates/views'
+let g:netrw_dirhist_3='/home/eborden/skedge/lockdown/frontend/widget4'
+let g:netrw_dirhist_4='/home/eborden/skedge/lockdown/email_templates/bedbath/generic'

@@ -1,14 +1,15 @@
 Config { font = "xft:DejaVu Sans Mono:size=9"
-       , pickBroadest = False
+       , pickBroadest = True
        , bgColor = "#073642"
        , fgColor = "#839496"
-       , position = Static { xpos = 0 , ypos = 0, width = 3840, height = 65 }
-       , border  = NoBorder
+       , position = Bottom
+       , border  = FullBM 60
+       , borderWidth = 0
        , borderColor  = "#002b36"
        , persistent = True
        , lowerOnStart = True
        , hideOnStart = False
-       , allDesktops = True
+       , allDesktops = False
        , overrideRedirect = False
        , commands = [ Run Weather "KNYC" [ "-t", "<tempF>°"
                                          , "-L", "33"
