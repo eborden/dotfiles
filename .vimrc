@@ -50,6 +50,7 @@ set smarttab                    "Indent instead of tab at start of line
 set shiftround                  "Round spaces to nearest shiftwidth multiple
 set nojoinspaces                "Don't convert spaces to tabs
 
+set relativenumber
 set backspace=indent,eol,start
 vnoremap <C-c> "+y
 inoremap <C-v> <Esc>"+p i
