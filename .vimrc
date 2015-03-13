@@ -55,10 +55,20 @@ vnoremap <C-c> "+y
 inoremap <C-v> <Esc>"+p i
 
 " Ctrl P
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|dist)$',
-  \ 'file': '\v\.(exe|so|dll|hi|ho|o|db)$',
-  \ }
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+                            \ --ignore .git
+                            \ --ignore .svn
+                            \ --ignore .hg
+                            \ --ignore dist
+                            \ --ignore build
+                            \ --ignore .hi
+                            \ --ignore .ho
+                            \ --ignore .o
+                            \ --ignore .so
+                            \ --ignore .dll
+                            \ --ignore .db
+                            \ --ignore .exe
+                            \ -g ""'
 
 " Status
 let g:airline#extensions#tabline#enabled = 1

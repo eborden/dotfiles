@@ -28,11 +28,11 @@ function _buildfront {
 }
 
 function _findHaskell {
-  find -name "*.hs" | xargs egrep $1
+  ag $1 -G ".*\.hs"
 }
 
 function _findJS {
-  find -name "*.js" | xargs egrep $1
+  ag $1 -G ".*\.js"
 }
 
 function _toO0 {
