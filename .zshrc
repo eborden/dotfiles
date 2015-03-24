@@ -18,15 +18,6 @@ source /home/eborden/.zsh/zsh-git-prompt/zshrc.sh
 
 PROMPT='%B%m%b$(git_super_status) %# '
 
-function _buildfront {
-  GOBACK=`pwd`;
-  cd ~/skedge/lockdown/backend;
-  nix-build ../nixpkgs -A skedge.frontend;
-  rm -rf frontend; 
-  ln -s result frontend;
-  cd $GOBACK
-}
-
 function _findHaskell {
   ag $1 -G ".*\.hs"
 }
@@ -45,7 +36,6 @@ function _toO2 {
   echo "replaced O0 with O2"
 }
 
-alias buildfront=_buildfront
 alias findHaskell=_findHaskell
 alias findJS=_findJS
 alias toO0=_toO0
