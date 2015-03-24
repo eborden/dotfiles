@@ -14,7 +14,7 @@ orange = "#cb4b16"
 red = "#dc322f"
 
 main = do
-  xproc <- spawnPipe "/home/eborden/.nix-profile/bin/xmobar /home/eborden/.xmobarrc"
+  xproc <- spawnPipe "xmobar ~/.xmobarrc"
   xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
     { manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts $ layoutHook defaultConfig
