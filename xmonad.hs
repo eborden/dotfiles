@@ -34,7 +34,7 @@ main = do
     , focusFollowsMouse = False
     , keys = newKeys $ keys defaultConfig
     , borderWidth = 0
-    , terminal = "terminator"
+    , terminal = "urxvt"
     }
 
 xK_fnLeft = 0x1008ff11
