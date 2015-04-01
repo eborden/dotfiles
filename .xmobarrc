@@ -1,5 +1,5 @@
 Config { font = "xft:DejaVu Sans Mono:size=9"
-       , pickBroadest = True
+       , pickBroadest = False
        , bgColor = "#073642"
        , fgColor = "#839496"
        , position = Bottom
@@ -9,7 +9,7 @@ Config { font = "xft:DejaVu Sans Mono:size=9"
        , persistent = True
        , lowerOnStart = True
        , hideOnStart = False
-       , allDesktops = False
+       , allDesktops = True
        , overrideRedirect = False
        , commands = [ Run Weather "KNYC" [ "-t", "<tempF>°"
                                          , "-L", "33"

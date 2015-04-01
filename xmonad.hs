@@ -5,6 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.FadeInactive
 import XMonad.Actions.CycleWS
+import qualified XMonad.StackSet as W
 import System.IO
 import qualified Data.Map as Map
 
@@ -13,10 +14,14 @@ lightBlue = "#073642"
 orange = "#cb4b16"
 red = "#dc322f"
 
+myManageHook = gimpHook <+> manageDocks <+> manageHook defaultConfig
+  where role = stringProperty "WM_WINDOW_ROLE"
+        gimpHook = composeAll [(role =? "gimp-toolbox" <||> role =? "gimp-image-window") --> (ask >>= doF . W.sink)]
+
 main = do
   xproc <- spawnPipe "xmobar ~/.xmobarrc"
   xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
-    { manageHook = manageDocks <+> manageHook defaultConfig
+    { manageHook = myManageHook
     , layoutHook = avoidStruts $ layoutHook defaultConfig
     , modMask = myModMask
     , logHook = do
