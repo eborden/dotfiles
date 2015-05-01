@@ -19,25 +19,24 @@ source /home/eborden/.zsh/zsh-git-prompt/zshrc.sh
 PROMPT='%B%m%b$(git_super_status) %# '
 
 function _findHaskell {
-  ag $1 -G ".*\.hs"
+  ag $* -G ".*\.hs"
 }
 
 function _findJS {
-  ag $1 -G ".*\.js"
+  ag $* -G ".*\.js"
 }
 
-function _toO0 {
-  find -name "*.cabal" | xargs sed -i "s/O2/O0/g"
-  echo "replaced O2 with O0"
+#a very unfortunately named alias
+function _vag {
+  vim $(ag -l $*)
 }
 
-function _toO2 {
-  find -name "*.cabal" | xargs sed -i "s/O0/O2/g"
-  echo "replaced O0 with O2"
+function _vext {
+  _vag -g ".*\\.$1"
 }
 
 alias findHaskell=_findHaskell
 alias findJS=_findJS
-alias toO0=_toO0
-alias toO2=_toO2
 alias v=vim
+alias vag=_vag
+alias vile=_vile

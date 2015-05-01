@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/eborden/skedge/lockdown/widgets/mac-widget/mac/app/templates'
-let g:netrw_dirhist_2='/home/eborden/skedge/lockdown/widgets/mac-widget/mac/app/templates/views'
-let g:netrw_dirhist_3='/home/eborden/skedge/lockdown/frontend/widget4'
-let g:netrw_dirhist_4='/home/eborden/skedge/lockdown/email_templates/bedbath/generic'
-let g:netrw_dirhist_5='/home/eborden/skedge/grandunified/widgets/mac-widget/mac/public/images/lookbook'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/eborden/skedge/grandunified/.git/hooks.old'
