@@ -16,7 +16,9 @@ bindkey -v
 
 source /home/eborden/.zsh/zsh-git-prompt/zshrc.sh
 
-PROMPT='%B%m%b$(git_super_status) %# '
+job=$'\e[0;31m仕\e[0m'
+
+PROMPT='%B%m%b$(git_super_status)%(1j.$job.) %# '
 
 function _findHaskell {
   ag $* -G ".*\.hs"
@@ -31,7 +33,8 @@ function _vag {
   vim $(ag -l $*)
 }
 
-function _vext {
+function _vile {
+  #rest=${@: 1, -($# - 1)}
   _vag -g ".*\\.$1"
 }
 

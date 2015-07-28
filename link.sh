@@ -12,3 +12,4 @@ ln -sf $basedir/.Xdefaults ~/
 ln -sfd $basedir/.vim ~/
 ln -sf $basedir/.vimrc ~/
 ln -sf $basedir/.zshrc ~/
+ln -sf $basedir/.gitconfig ~/

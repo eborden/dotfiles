@@ -1,0 +1,15 @@
+[user]
+  name = Evan Rutledge Borden
+  email = evan.borden@skedge.me
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  cob = checkout -b
+  ms = merge --squash
+  cm = commit -m
+[push]
+  default = simple
+
+[merge]
+  renamelimit = 3000
+[core]
+	editor = vim
