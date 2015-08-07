@@ -18,6 +18,7 @@ set lazyredraw
 
 set showmatch
 set mat=2
+set mouse=a
 
 " Encoding
 set encoding=utf8
