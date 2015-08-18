@@ -10,6 +10,7 @@ ln -sf $basedir/.xmobarrc ~/
 ln -sf $basedir/.xprofile ~/
 ln -sf $basedir/.Xdefaults ~/
 ln -sfd $basedir/.vim ~/
+ln -sf $basedir/.tigrc ~/
 ln -sf $basedir/.vimrc ~/
 ln -sf $basedir/.zshrc ~/
 ln -sf $basedir/.gitconfig ~/

@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/eborden/skedge/grandunified/.git/hooks.old'
 let g:netrw_dirhist_2='/home/eborden/skedge/grandunified/snix/internal'
 let g:netrw_dirhist_3='/home/eborden/skedge/grandunified/backend/genLib/src/GenLib/Doc'
 let g:netrw_dirhist_4='/home/eborden/skedge/danbot'
 let g:netrw_dirhist_5='/home/eborden/skedge/grandunified/dev/qa-internal/bedbath'
+let g:netrw_dirhist_6='/home/eborden/skedge/sephora-stable/migration/src/migrate'
