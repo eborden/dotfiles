@@ -9,6 +9,8 @@ execute pathogen#infect()
 " - vim-fugitive
 " - vim-gitgutter.git
 
+let mapleader=","
+
 syntax on
 filetype on
 filetype plugin indent on
@@ -94,3 +96,7 @@ let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
 let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
 let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
 
+"intentation
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
