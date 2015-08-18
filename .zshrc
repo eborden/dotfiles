@@ -12,6 +12,7 @@ HISTSIZE=10000
 SAVEHIST=1000
 setopt extendedglob
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 
 source /home/eborden/.zsh/zsh-git-prompt/zshrc.sh
