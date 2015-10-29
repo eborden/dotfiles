@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-indent-guides"]
 	path = .vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule ".vim/syntax/vim-syntax-vcl"]
+	path = .vim/syntax/vim-syntax-vcl
+	url = git@github.com:pld-linux/vim-syntax-vcl.git
