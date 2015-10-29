@@ -9,6 +9,12 @@ execute pathogen#infect()
 " - vim-fugitive
 " - vim-gitgutter.git
 
+" Disable arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 let mapleader=","
 
 syntax on
@@ -100,3 +106,7 @@ let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+
+"vlc syntax
+au BufRead,BufNewFile *.vcl :set ft=vcl
+au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim

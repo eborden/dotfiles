@@ -29,7 +29,7 @@ Config { font = "xft:DejaVu Sans Mono:size=9"
                     , Run Network "wlp8s0" ["-L","0","-H","1000","--normal","green","--high","red", "-t", "<rx>:<tx>"] 10
                     , Run Wireless "wlp8s0" [ "-t", "<quality>░"
                                             ] 300
-                    , Run Volume "default" "Master" [ "-t", "<volume>♫"
+                    , Run Volume "default" "Master" [ "-t", "<volume>♫<status>"
                                                     --, "-t", "<volume><status>"
                                                     --, "--off", "♫"
                                                     --, "--on", "♫"

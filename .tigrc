@@ -1,2 +1,2 @@
 bind main ! !git revert %(commit)
-set mouse = yes
+#set mouse = yes
