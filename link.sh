@@ -14,3 +14,4 @@ ln -sf $basedir/.tigrc ~/
 ln -sf $basedir/.vimrc ~/
 ln -sf $basedir/.zshrc ~/
 ln -sf $basedir/.gitconfig ~/
+ln -sf $basedir/.tmux.conf ~/
