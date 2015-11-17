@@ -86,6 +86,7 @@ let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline#extensions#tabline#left_sep = '▶'
 let g:airline#extensions#tabline#right_sep = '◀'
+let g:tmuxline_powerline_separators = 0
 
 set laststatus=2
 set cmdheight=1
