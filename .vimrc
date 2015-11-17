@@ -15,7 +15,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-let mapleader=","
+let mapleader = "\<Space>"
 
 syntax on
 filetype on
@@ -63,6 +63,10 @@ set relativenumber
 set backspace=indent,eol,start
 vnoremap <C-c> "+y
 inoremap <C-v> <Esc>"+p i
+
+" Explorer
+let g:netrw_liststyle=3
+map <leader>k :Explore<cr> 
 
 " Ctrl P
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
