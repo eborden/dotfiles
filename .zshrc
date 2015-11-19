@@ -40,6 +40,7 @@ function _vile {
 }
 
 alias findHaskell=_findHaskell
+alias fh=_findHaskell
 alias findJS=_findJS
 alias v=vim
 alias vag=_vag
