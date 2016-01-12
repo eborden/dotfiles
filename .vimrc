@@ -64,6 +64,9 @@ set backspace=indent,eol,start
 vnoremap <C-c> "+y
 inoremap <C-v> <Esc>"+p i
 
+" Diff
+set diffopt+=vertical
+
 " Explorer
 let g:netrw_liststyle=3
 map <leader>k :Explore<cr> 
