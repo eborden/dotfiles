@@ -14,6 +14,8 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+" Disable Ex mode
+noremap Q <Nop>
 
 let mapleader = "\<Space>"
 
