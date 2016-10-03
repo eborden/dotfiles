@@ -45,3 +45,4 @@ alias findJS=_findJS
 alias v=vim
 alias vag=_vag
 alias vile=_vile
+alias vim=nvim
