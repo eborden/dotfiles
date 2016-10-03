@@ -12,8 +12,10 @@
 [merge]
   renamelimit = 3000
 [core]
-	editor = vim
+	editor = nvim
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[mergetool]
+	path = meld

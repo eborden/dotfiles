@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
@@ -31,3 +28,9 @@
 [submodule ".vim/bundle/tmuxline.vim"]
 	path = .vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
+[submodule ".vim/bundle/neomake"]
+	path = .vim/bundle/neomake
+	url = git@github.com:neomake/neomake.git
+[submodule ".vim/bundle/vim-hdevtools"]
+	path = .vim/bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools.git

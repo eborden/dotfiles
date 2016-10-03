@@ -29,6 +29,7 @@ set lazyredraw
 set showmatch
 set mat=2
 set mouse=a
+set clipboard+=unnamedplus
 
 " Encoding
 set encoding=utf8
@@ -117,6 +118,9 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
-"vlc syntax
+"vcl syntax
 au BufRead,BufNewFile *.vcl :set ft=vcl
 au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim
+
+"Neomake
+autocmd! BufWritePost * Neomake
