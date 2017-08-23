@@ -1,13 +1,4 @@
 execute pathogen#infect()
-" Plugins:
-" - ctrlp.vim
-" - haskell-vim
-" - neco-ghc
-" - syntastic
-" - vim-airline
-" - vim-colors-solarized
-" - vim-fugitive
-" - vim-gitgutter.git
 
 " Disable arrows
 noremap <Up> <NOP>
