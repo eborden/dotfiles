@@ -44,23 +44,6 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-" Syntax Highlighting
-" vcl syntax
-au BufRead,BufNewFile *.vcl :set ft=vcl
-au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim
-" Hamlet files
-au BufReadPost *.ezt set syntax=html
-" Markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'haskell']
-" Interpret LHS files as markdown by default
-autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown
-" Haskell Vim
-let g:haskell_enable_quantification = 1 "to enable highlighting of forall
-let g:haskell_enable_recursivedo = 1 "to enable highlighting of mdo and rec
-let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
-let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
-let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
-
 " Tabs
 set tabstop=2                   "A tab is 2 spaces
 set expandtab                   "Always uses spaces instead of tabs
@@ -129,3 +112,20 @@ au BufReadPost *.hs vmap K y :exe "!google-chrome http://localhost:8080?hoogle='
 
 " Trim trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Syntax Highlighting
+" vcl syntax
+au BufRead,BufNewFile *.vcl :set ft=vcl
+au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim
+" Hamlet files
+au BufReadPost *.ezt set syntax=html
+" Markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'haskell']
+" Interpret LHS files as markdown by default
+autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown
+" Haskell Vim
+let g:haskell_enable_quantification = 1 "to enable highlighting of forall
+let g:haskell_enable_recursivedo = 1 "to enable highlighting of mdo and rec
+let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
+let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
+let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
