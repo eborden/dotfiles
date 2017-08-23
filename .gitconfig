@@ -1,6 +1,6 @@
 [user]
   name = Evan Rutledge Borden
-  email = evan.borden@skedge.me
+  email = eborden@frontrowed.com
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   cob = checkout -b
@@ -19,3 +19,5 @@
 	required = true
 [mergetool]
 	path = meld
+[diff]
+    tool = meld
