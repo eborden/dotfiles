@@ -122,5 +122,16 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 au BufRead,BufNewFile *.vcl :set ft=vcl
 au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim
 
-"Neomake
-autocmd! BufWritePost * Neomake
+" Hamlet files
+au BufReadPost *.ezt set syntax=html
+
+"Trim trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'haskell']
+
+" Interpret LHS files as markdown by default
+autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
