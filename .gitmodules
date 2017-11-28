@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-hdevtools"]
 	path = .vim/bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools.git
+[submodule ".vim/bundle/editorconfig-vim"]
+	path = .vim/bundle/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
