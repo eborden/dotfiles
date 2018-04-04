@@ -1,4 +1,5 @@
 execute pathogen#infect()
+silent! helptags ALL
 
 " Disable arrows
 noremap <Up> <NOP>
