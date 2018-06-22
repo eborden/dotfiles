@@ -34,6 +34,9 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+" Exit terminal with ESC
+" tnoremap <ESC> <C-\><C-n>
+
 " Search
 set ignorecase
 set smartcase
