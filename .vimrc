@@ -131,6 +131,7 @@ let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
 let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
 let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
 
+" ALE
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
@@ -139,3 +140,14 @@ let g:ale_haskell_stack_build_options='--fast --ghc-options "-fwrite-interface -
 let g:ale_linters = {
 \   'haskell': ['brittany', 'hlint', 'stack-build'],
 \}
+
+" Tags
+map <Leader>T :execute '!'.b:ctags_command<CR><CR>
+autocmd BufEnter *
+  \   if !exists('b:ctags_command')
+  \ |   let b:ctags_command = 'ctags -R .'
+  \ | endif
+autocmd FileType haskell
+  \ | let b:ctags_command = 'find -name "*.hs" -exec fast-tags -v {} +'
+  \ | let g:fzf_tags_command = 'fast-tags -v'
+
