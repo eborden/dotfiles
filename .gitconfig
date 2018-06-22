@@ -3,7 +3,6 @@
   email = eborden@frontrowed.com
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  cob = checkout -b
   ms = merge --squash
   cm = commit -m
 [push]
@@ -21,3 +20,13 @@
 	path = meld
 [diff]
     tool = meld
+[url "git://github.com/ghc/packages-"]
+	insteadOf = git://github.com/ghc/packages/
+[url "http://github.com/ghc/packages-"]
+	insteadOf = http://github.com/ghc/packages/
+[url "https://github.com/ghc/packages-"]
+	insteadOf = https://github.com/ghc/packages/
+[url "ssh://git\\@github.com/ghc/packages-"]
+	insteadOf = ssh://git@github.com/ghc/packages/
+[url "git\\@github.com:/ghc/packages-"]
+	insteadOf = git@github.com:/ghc/packages/
