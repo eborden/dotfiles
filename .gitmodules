@@ -42,7 +42,7 @@
 	url = git@github.com:leehblue/texpander.git
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
 [submodule ".vim/bundle/fzf"]
 	path = .vim/bundle/fzf
 	url = git@github.com:junegunn/fzf.git
