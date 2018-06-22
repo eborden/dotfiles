@@ -72,21 +72,17 @@ set diffopt+=vertical
 let g:netrw_liststyle=3
 map <leader>k :Explore<cr>
 
-" Ctrl P
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-                            \ --ignore .git
-                            \ --ignore .svn
-                            \ --ignore .hg
-                            \ --ignore dist
-                            \ --ignore build
-                            \ --ignore .hi
-                            \ --ignore .ho
-                            \ --ignore .o
-                            \ --ignore .so
-                            \ --ignore .dll
-                            \ --ignore .db
-                            \ --ignore .exe
-                            \ -g ""'
+"FZF
+" Mapping selecting mappings
+nmap <C-p> :GFiles<cr>
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Status
 let g:airline#extensions#tabline#enabled = 1
