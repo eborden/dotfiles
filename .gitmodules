@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/tmuxline.vim"]
 	path = .vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
-[submodule ".vim/bundle/neomake"]
-	path = .vim/bundle/neomake
-	url = git@github.com:neomake/neomake.git
 [submodule ".vim/bundle/editorconfig-vim"]
 	path = .vim/bundle/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
