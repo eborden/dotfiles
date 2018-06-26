@@ -130,6 +130,10 @@ let g:haskell_enable_recursivedo = 1 "to enable highlighting of mdo and rec
 let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
 let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
 let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
+" Haskell Indentation
+let g:haskell_indent_before_where = 1
+let g:haskell_indent_after_bare_where = 1
+let g:haskell_indent_in = 0
 
 " ALE
 let g:ale_fix_on_save = 1
