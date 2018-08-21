@@ -141,9 +141,6 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
 let g:ale_haskell_stack_build_options='--fast --ghc-options "-fwrite-interface -fno-code"'
-let g:ale_linters = {
-\   'haskell': ['brittany', 'hlint', 'stack-build'],
-\}
 
 " Tags
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
