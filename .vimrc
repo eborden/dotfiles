@@ -132,7 +132,7 @@ let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
 let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
 " Haskell Indentation
 let g:haskell_indent_before_where = 1
-let g:haskell_indent_after_bare_where = 1
+let g:haskell_indent_after_bare_where = 2
 let g:haskell_indent_in = 0
 
 " ALE
@@ -140,7 +140,6 @@ let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
-let g:ale_haskell_stack_build_options='--fast --ghc-options "-fwrite-interface -fno-code"'
 
 " Tags
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
