@@ -147,7 +147,3 @@ autocmd BufEnter *
   \   if !exists('b:ctags_command')
   \ |   let b:ctags_command = 'ctags -R .'
   \ | endif
-autocmd FileType haskell
-  \ | let b:ctags_command = 'find -name "*.hs" -exec fast-tags -v {} +'
-  \ | let g:fzf_tags_command = 'fast-tags -v'
-
