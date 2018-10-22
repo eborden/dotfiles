@@ -80,6 +80,12 @@ set diffopt+=vertical
 let g:netrw_liststyle=3
 map <leader>k :Explore<cr>
 
+" tpope's buffer navigation shortcuts
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 "FZF
 " Mapping selecting mappings
 nmap <C-p> :GFiles<cr>
