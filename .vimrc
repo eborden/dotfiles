@@ -6,8 +6,13 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
 " Disable Ex mode
 noremap Q <Nop>
+
+" map jk and kj to equal Esc
+:inoremap jk <Esc>
+:inoremap kj <Esc>
 
 let mapleader = "\<Space>"
 
