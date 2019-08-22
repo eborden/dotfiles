@@ -34,3 +34,5 @@
 	insteadOf = git@github.com:/ghc/packages/
 [stash]
   showPatch = true
+[rebase]
+	autosquash = true
