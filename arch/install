@@ -26,12 +26,13 @@ INSTALL_WLAN=${INSTALL_WLAN:-wlan0} # let it proceed with dummy value
 case "${1:-system}" in
   system)
     # Setup Wifi
-    ip link
-    ip link set "$INSTALL_WLAN" up
+    # ip link
+    # ip link set "$INSTALL_WLAN" up
 
-    wlan_conf='/etc/wpa_supplicant/default.conf'
-    wpa_passphrase 'nacho 5g wifi' "$WLAN_PASS" > "$wlan_conf"
-    wpa_supplicant -c "$wlan_conf" -i "$INSTALL_WLAN"
+    # wlan_conf='/etc/wpa_supplicant/default.conf'
+    # wpa_passphrase 'nacho 5g wifi' "$WLAN_PASS" > "$wlan_conf"
+    # wpa_supplicant -B -c "$wlan_conf" -i "$INSTALL_WLAN"
+    # dhclient "$INSTALL_WLAN"
 
     # Setup time
     timedatectl set-ntp true
