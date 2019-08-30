@@ -154,7 +154,7 @@ options cryptdevice=UUID=$uuid:cryptroot root=/dev/mapper/cryptroot rw
 EOM
 
     # Networking
-    pacman -S --needed --noconfirm wpa_supplicant wpa_actiond dialog ifplugd
+    pacman -S --needed --noconfirm wpa_supplicant dialog ifplugd
     systemctl enable "netctl-auto@$INSTALL_WLAN"
     systemctl enable "netctl-ifplugd@$INSTALL_EN"
     cat >"/etc/netctl/${INSTALL_EN}-ethernet" <<EOM
