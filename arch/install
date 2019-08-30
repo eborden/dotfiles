@@ -91,6 +91,7 @@ EOF
     genfstab -U /mnt >> /mnt/etc/fstab
 
     # Chroot
+    cp install /mnt/
     arch-chroot /mnt ./install system-chroot
     reboot
     ;;
