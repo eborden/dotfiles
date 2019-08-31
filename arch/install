@@ -261,9 +261,8 @@ EOM
     # Dotfiles
     echo "For $USER@$(hostname) SSH key:"
     ssh-keygen -t rsa -b 4096
-    curl -F 'sprunge=<-' http://sprunge.us <~/.ssh/id_rsa.pub
-    echo "Install this key in GitHub/GitLab. Then enter to continue."
-    read -r
+    xclip -selection clipboard <~/.ssh/id_rsa.pub
+    firefox github.com
 
     git clone git@github.com:eborden/dotfiles ~/.dotfiles
 
