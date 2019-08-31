@@ -23,6 +23,11 @@ INSTALL_EN=${INSTALL_EN:-en0} # let it proceed with dummy value
 INSTALL_WLAN=$(ip link | sed '/^[0-9]*: \(wl[^:]*\):.*$/!d; s//\1/' | head -n 1)
 INSTALL_WLAN=${INSTALL_WLAN:-wlan0} # let it proceed with dummy value
 
+curl_file() {
+  url=https://raw.githubusercontent.com/eborden/dotfiles/master/files/arch/$1
+  curl --location --silent --fail "$url"
+}
+
 case "${1:-system}" in
   system)
     # Setup Wifi
@@ -181,5 +186,107 @@ EOM
 
     echo "For $INSTALL_USER:"
     while ! passwd "$INSTALL_USER"; do echo "Try again"; done
+    ;;
+
+  user)
+    # Bootstrap Aurget
+    curl -# https://aur.archlinux.org/cgit/aur.git/snapshot/aurget.tar.gz |
+      tar fxz -
+    (cd ./aurget && makepkg -i -r -s --noconfirm) && rm -rf ./aurget
+
+    # X
+    sudo pacman -S --needed --noconfirm \
+      xorg \
+      xorg-xinit \
+      xf86-video-intel \
+      xf86-input-synaptics \
+      xterm \
+      ttf-dejavu \
+      firefox \
+      dmenu
+
+    # ACPID
+    sudo pacman -S --needed --noconfirm acpid acpi hdparm sdparm wireless_tools
+    sudo systemctl enable acpid
+    sudo systemctl start acpid
+    aurget -S --deps --noedit --noconfirm --skippgpcheck laptop-mode-tools
+    sudo systemctl enable laptop-mode
+    sudo systemctl start laptop-mode
+
+    curl_file acpi-handler.sh | sudo tee /etc/acpi/handler.sh
+
+    # Docker
+    sudo pacman -S --needed --noconfirm docker docker-compose docker-machine
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo gpasswd -a "$USER" docker
+
+    # Other packages
+    sudo pacman -S --needed --noconfirm \
+      alsa-utils \
+      aws-cli \
+      bind-tools \
+      dunst \
+      fzf \
+      git \
+      gnupg \
+      hdparm \
+      htop \
+      jq \
+      jre-openjdk-headless \
+      lsof \
+      openssh \
+      pass \
+      postgresql-libs \
+      rcm \
+      ruby \
+      rxvt-unicode \
+      scrot \
+      shfmt \
+      slock \
+      strace \
+      tig \
+      truecrypt \
+      urxvt-perls \
+      wget \
+      xautolock \
+      xclip \
+      xdotool \
+      zsh
+
+    aurget -S --deps --noedit --noconfirm --skippgpcheck \
+      browserpass \
+      zoom
+
+    # Dotfiles
+    echo "For $USER@$(hostname) SSH key:"
+    ssh-keygen -t rsa -b 4096
+    curl -F 'sprunge=<-' http://sprunge.us <~/.ssh/id_rsa.pub
+    echo "Install this key in GitHub/GitLab. Then enter to continue."
+    read -r
+
+    git clone git@github.com:eborden/dotfiles ~/.dotfiles
+
+    # Monitor hotplugging
+    sudo tee /etc/udev/rules.d/99-monitor-hotplug.rules <<EOM
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", \
+  RUN+="/home/$INSTALL_USER/.local/bin/runx /home/$INSTALL_USER/.local/bin/msu"
+EOM
+
+    # Stack
+    aurget -S --deps --noedit --noconfirm --skippgpcheck stack-static
+    stack setup
+
+    # Avoid prompting
+    rcup -f
+
+    echo
+    echo "Done. Most things won't work until you log out/in again."
+    ;;
+
+  *)
+    echo "Invalid stage: $1" >&2
+    echo "  must be system|system-chroot|user" >&2
+    exit 1
     ;;
 esac
