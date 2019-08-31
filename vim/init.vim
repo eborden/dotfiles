@@ -1,1 +1,1 @@
-/home/eborden/.vimrc
+../vimrc
