@@ -2,49 +2,49 @@
 	path = .vim/bundle/vim-stylish-haskell
 	url = git@github.com:nbouscal/vim-stylish-haskell.git
 [submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
+	path = vim/bundle/ale
 	url = git@github.com:w0rp/ale.git
 [submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
+	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
 [submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 [submodule ".vim/bundle/haskell-vim"]
-	path = .vim/bundle/haskell-vim
+	path = vim/bundle/haskell-vim
 	url = https://github.com/raichoo/haskell-vim.git
 [submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule ".vim/bundle/vim-indent-guides"]
-	path = .vim/bundle/vim-indent-guides
+	path = vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
 [submodule ".vim/syntax/vim-syntax-vcl"]
-	path = .vim/syntax/vim-syntax-vcl
+	path = vim/syntax/vim-syntax-vcl
 	url = git@github.com:pld-linux/vim-syntax-vcl.git
 [submodule ".vim/bundle/vim-tmux-navigator"]
-	path = .vim/bundle/vim-tmux-navigator
+	path = vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule ".vim/bundle/tmuxline.vim"]
-	path = .vim/bundle/tmuxline.vim
+	path = vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
 [submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
+	path = vim/bundle/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule ".vim/bundle/fzf.vim"]
-	path = .vim/bundle/fzf.vim
+	path = vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
 [submodule ".vim/bundle/fzf"]
-	path = .vim/bundle/fzf
+	path = vim/bundle/fzf
 	url = git@github.com:junegunn/fzf.git
 [submodule "texpander"]
 	path = texpander
 	url = git@github.com:leehblue/texpander.git
 [submodule ".vim/bundle/vim-commentary"]
-	path = .vim/bundle/vim-commentary
+	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
 [submodule ".vim/bundle/vim-github-hub"]
 	path = .vim/bundle/vim-github-hub
