@@ -1,2 +1,2 @@
-EXCLUDES="xmonad.hs README.md arch"
+EXCLUDES="README.md arch"
 UNDOTTED="texpander"
