@@ -76,8 +76,8 @@ URxvt.keysym.Control-Right: \033[1;5C
 
 URxvt.perl-ext-common: default,clipboard,font-size,keyboard-select
 URxvt.iso14755: False
-URxvt.clipboard.copycmd: xclip -i
-URxvt.clipboard.pastecmd: xclip -o
+URxvt.clipboard.copycmd: xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
