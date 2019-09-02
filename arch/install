@@ -226,6 +226,7 @@ EOM
       alsa-utils \
       aws-cli \
       bind-tools \
+      browserpass \
       dunst \
       fzf \
       git \
@@ -254,7 +255,6 @@ EOM
       zsh
 
     aurget -S --deps --noedit --noconfirm --skippgpcheck \
-      browserpass \
       rcm \
       zoom
 
