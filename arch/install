@@ -238,7 +238,6 @@ EOM
       openssh \
       pass \
       postgresql-libs \
-      rcm \
       ruby \
       rxvt-unicode \
       scrot \
@@ -256,6 +255,7 @@ EOM
 
     aurget -S --deps --noedit --noconfirm --skippgpcheck \
       browserpass \
+      rcm \
       zoom
 
     # Dotfiles
