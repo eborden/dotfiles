@@ -262,10 +262,8 @@ EOM
     # Dotfiles
     echo "For $USER@$(hostname) SSH key:"
     ssh-keygen -t rsa -b 4096
-    xclip -selection clipboard <~/.ssh/id_rsa.pub
-    firefox github.com
 
-    git clone git@github.com:eborden/dotfiles ~/.dotfiles
+    git clone https://github.com/eborden/dotfiles.git ~/.dotfiles
 
     # Monitor hotplugging
     sudo tee /etc/udev/rules.d/99-monitor-hotplug.rules <<EOM
