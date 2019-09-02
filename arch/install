@@ -256,6 +256,7 @@ EOM
 
     aurget -S --deps --noedit --noconfirm --skippgpcheck \
       rcm \
+      browserpass \
       zoom
 
     # Dotfiles
