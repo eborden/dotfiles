@@ -1,2 +1,3 @@
 EXCLUDES="README.md arch"
 UNDOTTED="texpander"
+SYMLINK_DIRS="vim"
