@@ -10,3 +10,20 @@ let b:ale_haskell_stylish_haskell_executable='stack'
 
 " Tags
 let b:ctags_command = 'stack exec -- fast-tags -R --nomerge .'
+
+" Remap tags to search stackage on failure
+if !exists("*HaskellGoToTag")
+  function! HaskellGoToTag ()
+      let l:search_tag = expand('<cword>')
+      try
+          exe ':tag '.l:search_tag
+      catch
+          "" sync out the file and try going there again ""
+          echo v:exception
+          echo "Launching stackage..."
+          exe ':silent !google-chrome https://stackage.org/lts/hoogle?q='.l:search_tag
+      endtry
+  endfunction
+endif
+
+nnoremap <buffer> <C-]> :call HaskellGoToTag()<CR>
