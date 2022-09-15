@@ -10,9 +10,6 @@
 [submodule ".vim/bundle/haskell-vim"]
 	path = vim/bundle/haskell-vim
 	url = https://github.com/raichoo/haskell-vim.git
-[submodule ".vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
