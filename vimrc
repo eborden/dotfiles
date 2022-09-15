@@ -15,6 +15,7 @@ Plug 'LnL7/vim-nix'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Disable arrows

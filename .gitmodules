@@ -4,9 +4,6 @@
 [submodule ".vim/syntax/vim-syntax-vcl"]
 	path = vim/syntax/vim-syntax-vcl
 	url = git@github.com:pld-linux/vim-syntax-vcl.git
-[submodule ".vim/bundle/vim-tmux-navigator"]
-	path = vim/bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule "texpander"]
 	path = texpander
 	url = git@github.com:leehblue/texpander.git
