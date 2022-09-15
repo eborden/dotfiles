@@ -1,4 +1,3 @@
-execute pathogen#infect()
 silent! helptags ALL
 
 call plug#begin()
@@ -16,6 +15,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'etdev/vim-hexcolor'
+Plug '5outh/yesod-routes.vim'
 call plug#end()
 
 " Disable arrows
