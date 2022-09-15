@@ -10,6 +10,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'raichoo/haskell-vim'
+Plug 'LnL7/vim-nix'
 call plug#end()
 
 " Disable arrows
