@@ -1,6 +1,11 @@
 execute pathogen#infect()
 silent! helptags ALL
 
+call plug#begin()
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+call plug#end()
+
 " Disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -51,7 +56,7 @@ set incsearch
 " Colors
 set t_Co=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " Tabs
 set tabstop=2                   "A tab is 2 spaces
@@ -85,18 +90,6 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
-
-"FZF
-" Mapping selecting mappings
-nmap <C-p> :GFiles<cr>
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Status
 let g:airline#extensions#tabline#enabled = 1
@@ -157,7 +150,11 @@ let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
 
 " Tags
+nmap <C-P> :Telescope find_files<CR>
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
+map <Leader>r :w | :bel sp | :execute 'terminal '.expand('%:p')<CR>
+noremap <silent> <C-L> :nohlsearch<CR><C-L>
+
 autocmd BufEnter *
   \   if !exists('b:ctags_command')
   \ |   let b:ctags_command = 'ctags -R .'

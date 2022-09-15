@@ -13,7 +13,7 @@
   renamelimit = 3000
 [core]
 	editor = nvim
-	excludesfile = /home/eborden/.gitignore
+	excludesfile = /home/evan/.gitignore
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f

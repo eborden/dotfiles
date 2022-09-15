@@ -34,12 +34,6 @@
 [submodule ".vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/fzf.vim"]
-	path = vim/bundle/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
-[submodule ".vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = git@github.com:junegunn/fzf.git
 [submodule "texpander"]
 	path = texpander
 	url = git@github.com:leehblue/texpander.git
