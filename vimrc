@@ -177,7 +177,8 @@ noremap <C-P><C-G> :Telescope git_files<CR>
 noremap <C-G><C-P> :Telescope git_files<CR>
 
 " Buffer navigation
-noremap <C-b> :Telescope buffers<CR>
+noremap <C-P><C-L> :Telescope buffers<CR>
+noremap <C-L><C-P> :Telescope buffers<CR>
 
 " Tags
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
