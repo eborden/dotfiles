@@ -14,6 +14,7 @@ Plug 'raichoo/haskell-vim'
 Plug 'LnL7/vim-nix'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-commentary'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 " Disable arrows
