@@ -4,6 +4,7 @@ silent! helptags ALL
 call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 " Disable arrows
@@ -152,7 +153,7 @@ let g:ale_open_list = 1
 " Tags
 nmap <C-P> :Telescope find_files<CR>
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
-map <Leader>r :w | :bel sp | :execute 'terminal '.expand('%:p')<CR>
+" map <Leader>r :w | :bel sp | :execute 'terminal '.expand('%:p')<CR>
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 autocmd BufEnter *
