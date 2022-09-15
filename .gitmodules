@@ -13,9 +13,6 @@
 [submodule "texpander"]
 	path = texpander
 	url = git@github.com:leehblue/texpander.git
-[submodule ".vim/bundle/vim-commentary"]
-	path = vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule ".vim/bundle/vim-github-hub"]
 	path = .vim/bundle/vim-github-hub
 	url = git@github.com:jez/vim-github-hub.git

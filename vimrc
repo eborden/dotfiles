@@ -13,6 +13,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'raichoo/haskell-vim'
 Plug 'LnL7/vim-nix'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Disable arrows
