@@ -6,6 +6,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Disable arrows
