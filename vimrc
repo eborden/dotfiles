@@ -162,11 +162,23 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
 
+" Telescope config
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    layout_strategy='vertical'
+  }
+}
+EOF
+
+" File search
+noremap <C-P> :Telescope find_files<CR>
+
+" Buffer navigation
+noremap <C-b> :Telescope buffers<CR>
+
 " Tags
-nmap <C-P> :Telescope find_files<CR>
 map <Leader>T :execute '!'.b:ctags_command<CR><CR>
-" map <Leader>r :w | :bel sp | :execute 'terminal '.expand('%:p')<CR>
-noremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 autocmd BufEnter *
   \   if !exists('b:ctags_command')
