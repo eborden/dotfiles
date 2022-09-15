@@ -2,8 +2,9 @@ execute pathogen#infect()
 silent! helptags ALL
 
 call plug#begin()
+Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
