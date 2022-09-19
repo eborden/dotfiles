@@ -115,12 +115,6 @@ highlight SignColumn ctermbg=0
 " Git Commit Length
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-" Set K and <leader>K to search local hoogle
-au BufReadPost *.hs nmap K :exe "!stack hoogle --no-setup ".expand("'<cword>'")<CR>
-au BufReadPost *.hs vmap K y :exe "!stack hoogle --no-setup '".substitute(escape(@",'\'), '\n\+$', '', '')."'"<CR>
-au BufReadPost *.hs nmap <leader>K :exe "!google-chrome http://localhost:8080?hoogle=".expand("'<cword>'")." && wmctrl -o 0,0"<CR>
-au BufReadPost *.hs vmap <leader>K y :exe "!google-chrome http://localhost:8080?hoogle='".substitute(escape(@",'\'), '\n\+$', '', '')."' && wmctrl -o 0,0"<CR>
-
 " Trim trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
