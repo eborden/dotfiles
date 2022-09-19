@@ -28,10 +28,6 @@ noremap <Right> <NOP>
 " Disable Ex mode
 noremap Q <Nop>
 
-" map jk and kj to equal Esc
-:inoremap jk <Esc>
-:inoremap kj <Esc>
-
 let mapleader = "\<Space>"
 
 syntax on
