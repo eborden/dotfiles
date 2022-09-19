@@ -18,7 +18,6 @@ if !exists("*HaskellGoToTag")
       try
           exe ':tag '.l:search_tag
       catch
-          "" sync out the file and try going there again ""
           echo v:exception
           echo "Launching stackage..."
           exe ':silent !google-chrome https://stackage.org/lts/hoogle?q='.l:search_tag
