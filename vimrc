@@ -17,6 +17,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'etdev/vim-hexcolor'
 Plug '5outh/yesod-routes.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Disable arrows
