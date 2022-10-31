@@ -18,9 +18,10 @@ if !exists("*HaskellGoToTag")
       try
           exe ':tag '.l:search_tag
       catch
-          echo v:exception
-          echo "Launching stackage..."
-          exe ':silent !google-chrome https://stackage.org/lts/hoogle?q='.l:search_tag
+          " echo v:exception
+          " echo "Launching stackage..."
+          exe ':silent !google-chrome "https://backend-hoogle.freckle.com/?scope=set:all&hoogle='.l:search_tag.'"'
+
       endtry
   endfunction
 endif
