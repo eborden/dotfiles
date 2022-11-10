@@ -1,9 +1,11 @@
-silent! helptags ALL
+vim.cmd('silent! helptags ALL')
+local Plug = vim.fn['plug#']
 
-call plug#begin()
+vim.call('plug#begin')
+
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug('nvim-telescope/telescope.nvim', {tag = '0.1.0'})
 Plug 'kelly-lin/telescope-ag'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
@@ -19,7 +21,14 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'etdev/vim-hexcolor'
 Plug '5outh/yesod-routes.vim'
 Plug 'junegunn/goyo.vim'
-call plug#end()
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+Plug 'folke/which-key.nvim'
+
+vim.call('plug#end')
+
+vim.cmd([[
+silent! helptags ALL
 
 " Disable arrows
 noremap <Up> <NOP>
@@ -155,14 +164,14 @@ let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
 
 " Telescope config
-lua << EOF
+]])
 require('telescope').setup{
   defaults = {
     layout_strategy='vertical'
   }
 }
-EOF
 
+vim.cmd([[
 " File search
 noremap <C-P> :Telescope find_files<CR>
 noremap <C-P><C-G> :Telescope git_files<CR>
@@ -179,3 +188,29 @@ autocmd BufEnter *
   \   if !exists('b:ctags_command')
   \ |   let b:ctags_command = 'ctags -R .'
   \ | endif
+]])
+
+
+-- orgmode
+-- load custom tree-sitter grammar for org filetype
+require'orgmode'.setup_ts_grammar()
+
+-- tree-sitter configuration
+require'nvim-treesitter.configs'.setup {
+  -- if ts highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default vim syntax highlighting
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'}, -- required for spellcheck, some latex highlights and code block highlights that do not have ts grammar
+  },
+  ensure_installed = {'org'}, -- or run :tsupdate org
+}
+
+require'orgmode'.setup {
+  org_agenda_files = {'~/dropbox/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/dropbox/org/refile.org',
+}
+
+-- which key config
+require'which-key'.setup {}
+
+
