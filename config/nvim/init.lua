@@ -162,9 +162,10 @@ let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
-
-" Telescope config
 ]])
+
+-- Telescope config
+-------------------
 require('telescope').setup{
   defaults = {
     layout_strategy='vertical'
@@ -192,6 +193,7 @@ autocmd BufEnter *
 
 
 -- orgmode
+-------------------
 -- load custom tree-sitter grammar for org filetype
 require'orgmode'.setup_ts_grammar()
 
@@ -211,6 +213,5 @@ require'orgmode'.setup {
 }
 
 -- which key config
+-------------------
 require'which-key'.setup {}
-
-
