@@ -7,7 +7,7 @@ Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', {tag = '0.1.0'})
 Plug 'kelly-lin/telescope-ag'
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -132,14 +132,11 @@ map('n', '<C-L><C-P>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' }
 
 -- Status
 -------------------
-vim.cmd [[
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline#extensions#tabline#left_sep = '▶'
-let g:airline#extensions#tabline#right_sep = '◀'
-]]
-vim.g.tmuxline_powerline_separators = 0
+require'lualine'.setup { options = {
+  theme = 'powerline_dark',
+  section_separators = '',
+  component_separators = ''
+} }
 vim.opt.laststatus = 2
 vim.opt.cmdheight = 1
 vim.cmd'set noshowmode'
