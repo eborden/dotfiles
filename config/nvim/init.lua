@@ -146,7 +146,6 @@ vim.cmd'set noshowmode'
 
 -- Git
 -------------------
-
 vim.g.gitgutter_sign_column_always = 1 -- Git Gutter
 vim.cmd'highlight SignColumn ctermbg=0' -- Git gutter highlight
 vim.cmd'autocmd Filetype gitcommit setlocal spell textwidth=72' -- Git Commit Length
@@ -157,24 +156,11 @@ vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
 
 -- Syntax
 -------------------
-
 vim.cmd'au BufRead,BufNewFile *.vcl :set ft=vcl' -- vcl filetype
 vim.cmd'au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim'-- vcl syntax
 vim.cmd'au BufReadPost *.ezt set syntax=html'-- Hamlet files
 vim.g.markdown_fenced_languages = {'html', 'python', 'bash=sh', 'haskell', 'js', 'ts'} -- Markdown fencing
 vim.cmd'autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown' -- Interpret LHS files as markdown by default
-
--- Haskell Vim
-vim.g.haskell_enable_quantification = 1 --to enable highlighting of forall
-vim.g.haskell_enable_recursivedo = 1 --to enable highlighting of mdo and rec
-vim.g.haskell_enable_arrowsyntax = 1 --to enable highlighting of proc
-vim.g.haskell_enable_pattern_synonyms = 1 --to enable highlighting of pattern
-vim.g.haskell_enable_typeroles = 1 --to enable highlighting of type roles
-
--- Haskell Indentation
-vim.g.haskell_indent_before_where = 1
-vim.g.haskell_indent_after_bare_where = 2
-vim.g.haskell_indent_in = 0
 
 -- ALE
 -------------------
