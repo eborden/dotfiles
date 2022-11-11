@@ -170,15 +170,14 @@ vim.g.ale_lint_on_enter = 1
 vim.g.ale_open_list = 1
 
 -- Tags
+-------------------
 map('n', '<Leader>T', ':execute \'!\'.b:ctags_command<CR><CR>', { desc = 'rebuild tags' })
-
 vim.cmd [[
 autocmd BufEnter *
   \   if !exists('b:ctags_command')
   \ |   let b:ctags_command = 'ctags -R .'
   \ | endif
 ]]
-
 
 -- orgmode
 -------------------
