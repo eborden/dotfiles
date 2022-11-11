@@ -2,7 +2,7 @@
 	path = .vim/bundle/vim-stylish-haskell
 	url = git@github.com:nbouscal/vim-stylish-haskell.git
 [submodule ".vim/syntax/vim-syntax-vcl"]
-	path = vim/syntax/vim-syntax-vcl
+	path = config/nvim/syntax/syntax/vim-syntax-vcl
 	url = git@github.com:pld-linux/vim-syntax-vcl.git
 [submodule "texpander"]
 	path = texpander

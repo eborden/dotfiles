@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/evan/.stack/snapshots/x86_64-linux-tinfo6/019d62ad46482c6b2b30647d0fc954b74b4be44866effd8265b54fc149535e55/8.8.4/pkgdb'
+let g:netrw_dirhist_3='/home/evan/.stack/snapshots/x86_64-linux-tinfo6/019d62ad46482c6b2b30647d0fc954b74b4be44866effd8265b54fc149535e55/8.8.4/lib/x86_64-linux-ghc-8.8.4/basic-prelude-0.7.0-Lf3YJeK49Tr2wjJk3aEL8t'
+let g:netrw_dirhist_2='/home/evan/.stack/snapshots/x86_64-linux-tinfo6/019d62ad46482c6b2b30647d0fc954b74b4be44866effd8265b54fc149535e55/8.8.4/pkgdb'
+let g:netrw_dirhist_1='/home/evan/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d'
