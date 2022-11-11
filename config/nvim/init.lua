@@ -1,7 +1,7 @@
-vim.cmd('silent! helptags ALL')
+local map = vim.keymap.set
 local Plug = vim.fn['plug#']
 
-vim.call('plug#begin')
+vim.call'plug#begin'
 
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
@@ -25,144 +25,159 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 Plug 'folke/which-key.nvim'
 
-vim.call('plug#end')
+vim.call'plug#end'
 
-vim.cmd([[
-silent! helptags ALL
+vim.cmd'silent! helptags ALL'
 
-" Disable arrows
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+-- Disable arrows
+map('', '<Up>', '<Nop>', { noremap = true})
+map('', '<Down>', '<Nop>', { noremap = true})
+map('', '<Left>', '<Nop>', { noremap = true})
+map('', '<Right>', '<Nop>', { noremap = true})
 
-" Disable Ex mode
-noremap Q <Nop>
+-- Disable Ex mode
+map('', 'Q', '<Nop>', { noremap = true})
 
-let mapleader = "\<Space>"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-syntax on
-filetype on
-filetype plugin indent on
-set autoread
-set hid
-set lazyredraw
+vim.cmd'syntax on'
+vim.cmd'filetype on'
+vim.cmd'filetype plugin indent on'
+vim.opt.autoread = true
+vim.opt.hid = true
+vim.opt.lazyredraw = true
 
-set showmatch
-set mat=2
-set mouse=a
-set clipboard+=unnamedplus
+vim.opt.showmatch = true
+vim.opt.mat = 2
+vim.opt.mouse = 'a'
+vim.opt.clipboard:append('unnamedplus')
 
-" Encoding
-set encoding=utf8
-set ffs=unix,mac,dos
+-- Encoding
+vim.opt.encoding = 'utf8'
+vim.opt.ffs = 'unix,mac,dos'
 
-" Backups
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
+-- Backups
+vim.opt.backup = true
+vim.cmd'set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp'
+vim.opt.backupskip = '/tmp/*,/private/tmp/*e'
+vim.cmd'set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp'
+vim.opt.writebackup = true
 
-" Search
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
+-- Search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
-" Colors
-set t_Co=256
-set background=dark
-" colorscheme solarized
+-- Colors
+vim.cmd'set t_Co=256'
+vim.opt.background = dark
 
-" Tabs
-set tabstop=2                   "A tab is 2 spaces
-set expandtab                   "Always uses spaces instead of tabs
-set softtabstop=2               "Insert 2 spaces when tab is pressed
-set shiftwidth=2                "An indent is 2 spaces
-set smarttab                    "Indent instead of tab at start of line
-set shiftround                  "Round spaces to nearest shiftwidth multiple
-set nojoinspaces                "Don't convert spaces to tabs
+-- Tabs
+vim.opt.tabstop = 2 -- A tab is 2 spaces
+vim.opt.expandtab = true -- Always uses spaces instead of tabs
+vim.opt.softtabstop = 2 -- Insert 2 spaces when tab is pressed
+vim.opt.shiftwidth = 2 -- An indent is 2 spaces
+vim.opt.smarttab = true -- Indent instead of tab at start of line
+vim.opt.shiftround = true -- Round spaces to nearest shiftwidth multiple
+vim.opt.joinspaces = false -- Don't convert spaces to tabs
 
-set number relativenumber
-set backspace=indent,eol,start
-vnoremap <C-c> "+y
-inoremap <C-v> <Esc>"+p i
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.backspace = 'indent,eol,start'
+map('v', '<C-c>', '+y', { desc = 'Copy', noremap = true })
+map('i', '<C-v>', '<Esc>"+p i"', { desc = 'Paste', noremap = true })
 
-" Intentation
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+-- Intentation
+-------------------
+vim.g.indent_guides_auto_colors = 0
+vim.g.indent_guides_enable_on_vim_startup = 1
+vim.cmd'autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8'
+vim.cmd'autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0'
 
-" Focus
-map <Leader>g :Goyo<CR>
+-- Focus
+-------------------
+map('', '<Leader>g', ':Goyo<cr>', { desc = 'Toggle Goyo' })
 
-" Diff
-set diffopt+=vertical
+-- Diff
+-------------------
+vim.opt.diffopt:append('vertical')
 
-" Explorer
-let g:netrw_liststyle=3
-map <leader>k :Explore<cr>
+-- Explorer
+-------------------
+vim.g.netrw_liststyle = 3
+map('', '<Leader>k', ':Explore<cr>', { desc = 'Explore under cursor' })
 
-" tpope's buffer navigation shortcuts
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+-- tpope's buffer navigation shortcuts
+map('n', '[b', ':bprevious<CR>', { desc = 'previous buffer', silent = true, noremap = true })
+map('n', ']b', ':bnext<CR>', { desc = 'next buffer', silent = true, noremap = true })
+map('n', '[B', ':bfirst<CR>', { desc = 'first buffer', silent = true, noremap = true })
+map('n', ']B', ':blast<CR>', { desc = 'last buffer', silent = true, noremap = true })
 
-" Status
+-- Status
+-------------------
+vim.cmd [[
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline#extensions#tabline#left_sep = '▶'
 let g:airline#extensions#tabline#right_sep = '◀'
-let g:tmuxline_powerline_separators = 0
-set laststatus=2
-set cmdheight=1
-set noshowmode
+]]
+vim.g.tmuxline_powerline_separators = 0
+vim.opt.laststatus = 2
+vim.opt.cmdheight = 1
+vim.cmd'set noshowmode'
 
-" Git Gutter
-let g:gitgutter_sign_column_always = 1
-highlight SignColumn ctermbg=0
+-- Git
+-------------------
 
-" Git Commit Length
-autocmd Filetype gitcommit setlocal spell textwidth=72
+-- Git Gutter
+vim.g.gitgutter_sign_column_always = 1
 
-" Trim trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+vim.cmd'highlight SignColumn ctermbg=0'
 
-" vcl syntax
-au BufRead,BufNewFile *.vcl :set ft=vcl
-au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim
+-- Git Commit Length
+vim.cmd'autocmd Filetype gitcommit setlocal spell textwidth=72'
 
-" Hamlet files
-au BufReadPost *.ezt set syntax=html
+-- Trim trailing whitespace on save
+-------------------
+vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
 
-" Markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'haskell']
+-- Syntax
+-------------------
 
-" Interpret LHS files as markdown by default
-autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown
+-- vcl syntax
+vim.cmd'au BufRead,BufNewFile *.vcl :set ft=vcl'
+vim.cmd'au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim'
 
-" Haskell Vim
-let g:haskell_enable_quantification = 1 "to enable highlighting of forall
-let g:haskell_enable_recursivedo = 1 "to enable highlighting of mdo and rec
-let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
-let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
-let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
+-- Hamlet files
+vim.cmd'au BufReadPost *.ezt set syntax=html'
 
-" Haskell Indentation
-let g:haskell_indent_before_where = 1
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_in = 0
+-- Markdown
+vim.g.markdown_fenced_languages = {'html', 'python', 'bash=sh', 'haskell'}
 
-" ALE
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 1
-let g:ale_open_list = 1
-]])
+-- Interpret LHS files as markdown by default
+vim.cmd'autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown'
+
+-- Haskell Vim
+vim.g.haskell_enable_quantification = 1 --to enable highlighting of forall
+vim.g.haskell_enable_recursivedo = 1 --to enable highlighting of mdo and rec
+vim.g.haskell_enable_arrowsyntax = 1 --to enable highlighting of proc
+vim.g.haskell_enable_pattern_synonyms = 1 --to enable highlighting of pattern
+vim.g.haskell_enable_typeroles = 1 --to enable highlighting of type roles
+
+-- Haskell Indentation
+vim.g.haskell_indent_before_where = 1
+vim.g.haskell_indent_after_bare_where = 2
+vim.g.haskell_indent_in = 0
+
+-- ALE
+-------------------
+vim.g.ale_fix_on_save = 1
+vim.g.ale_lint_on_text_changed = 'never'
+vim.g.ale_lint_on_enter = 1
+vim.g.ale_open_list = 1
 
 -- Telescope config
 -------------------
@@ -171,25 +186,24 @@ require('telescope').setup{
     layout_strategy='vertical'
   }
 }
+-- File search
+map('n', '<C-P>', '<cmd>:Telescope find_files<CR>', { desc = 'file search' })
+map('n', '<C-P><C-G>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
+map('n', '<C-G><C-P>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
 
-vim.cmd([[
-" File search
-noremap <C-P> :Telescope find_files<CR>
-noremap <C-P><C-G> :Telescope git_files<CR>
-noremap <C-G><C-P> :Telescope git_files<CR>
+-- Buffer navigation
+map('n', '<C-P><C-L>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
+map('n', '<C-L><C-P>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
 
-" Buffer navigation
-noremap <C-P><C-L> :Telescope buffers<CR>
-noremap <C-L><C-P> :Telescope buffers<CR>
+-- Tags
+map('n', '<Leader>T', ':execute \'!\'.b:ctags_command<CR><CR>', { desc = 'rebuild tags' })
 
-" Tags
-map <Leader>T :execute '!'.b:ctags_command<CR><CR>
-
+vim.cmd [[
 autocmd BufEnter *
   \   if !exists('b:ctags_command')
   \ |   let b:ctags_command = 'ctags -R .'
   \ | endif
-]])
+]]
 
 
 -- orgmode
