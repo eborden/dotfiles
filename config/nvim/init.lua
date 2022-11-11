@@ -147,13 +147,9 @@ vim.cmd'set noshowmode'
 -- Git
 -------------------
 
--- Git Gutter
-vim.g.gitgutter_sign_column_always = 1
-
-vim.cmd'highlight SignColumn ctermbg=0'
-
--- Git Commit Length
-vim.cmd'autocmd Filetype gitcommit setlocal spell textwidth=72'
+vim.g.gitgutter_sign_column_always = 1 -- Git Gutter
+vim.cmd'highlight SignColumn ctermbg=0' -- Git gutter highlight
+vim.cmd'autocmd Filetype gitcommit setlocal spell textwidth=72' -- Git Commit Length
 
 -- Trim trailing whitespace on save
 -------------------
