@@ -115,6 +115,21 @@ map('n', ']b', ':bnext<CR>', { desc = 'next buffer', silent = true, noremap = tr
 map('n', '[B', ':bfirst<CR>', { desc = 'first buffer', silent = true, noremap = true })
 map('n', ']B', ':blast<CR>', { desc = 'last buffer', silent = true, noremap = true })
 
+-- Telescope config
+require('telescope').setup{
+  defaults = {
+    layout_strategy='vertical'
+  }
+}
+-- File search
+map('n', '<C-P>', '<cmd>:Telescope find_files<CR>', { desc = 'file search' })
+map('n', '<C-P><C-G>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
+map('n', '<C-G><C-P>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
+
+-- Buffer navigation
+map('n', '<C-P><C-L>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
+map('n', '<C-L><C-P>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
+
 -- Status
 -------------------
 vim.cmd [[
@@ -147,18 +162,11 @@ vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
 -- Syntax
 -------------------
 
--- vcl syntax
-vim.cmd'au BufRead,BufNewFile *.vcl :set ft=vcl'
-vim.cmd'au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim'
-
--- Hamlet files
-vim.cmd'au BufReadPost *.ezt set syntax=html'
-
--- Markdown
-vim.g.markdown_fenced_languages = {'html', 'python', 'bash=sh', 'haskell'}
-
--- Interpret LHS files as markdown by default
-vim.cmd'autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown'
+vim.cmd'au BufRead,BufNewFile *.vcl :set ft=vcl' -- vcl filetype
+vim.cmd'au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim'-- vcl syntax
+vim.cmd'au BufReadPost *.ezt set syntax=html'-- Hamlet files
+vim.g.markdown_fenced_languages = {'html', 'python', 'bash=sh', 'haskell', 'js', 'ts'} -- Markdown fencing
+vim.cmd'autocmd BufNewFile,BufReadPost *.lhs set filetype=markdown' -- Interpret LHS files as markdown by default
 
 -- Haskell Vim
 vim.g.haskell_enable_quantification = 1 --to enable highlighting of forall
@@ -178,22 +186,6 @@ vim.g.ale_fix_on_save = 1
 vim.g.ale_lint_on_text_changed = 'never'
 vim.g.ale_lint_on_enter = 1
 vim.g.ale_open_list = 1
-
--- Telescope config
--------------------
-require('telescope').setup{
-  defaults = {
-    layout_strategy='vertical'
-  }
-}
--- File search
-map('n', '<C-P>', '<cmd>:Telescope find_files<CR>', { desc = 'file search' })
-map('n', '<C-P><C-G>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
-map('n', '<C-G><C-P>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
-
--- Buffer navigation
-map('n', '<C-P><C-L>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
-map('n', '<C-L><C-P>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' })
 
 -- Tags
 map('n', '<Leader>T', ':execute \'!\'.b:ctags_command<CR><CR>', { desc = 'rebuild tags' })
