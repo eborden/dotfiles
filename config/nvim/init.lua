@@ -115,11 +115,10 @@ map('n', '[B', ':bfirst<CR>', { desc = 'first buffer', silent = true, noremap = 
 map('n', ']B', ':blast<CR>', { desc = 'last buffer', silent = true, noremap = true })
 
 -- Telescope config
-require('telescope').setup{
-  defaults = {
-    layout_strategy='vertical'
-  }
-}
+require('telescope').setup{ defaults = { layout_strategy='vertical' } }
+-- Hack to fix https://github.com/nvim-telescope/telescope.nvim/issues/2145
+vim.cmd('hi NormalFloat ctermfg=LightGrey')
+
 -- File search
 map('n', '<C-P>', '<cmd>:Telescope find_files<CR>', { desc = 'file search' })
 map('n', '<C-P><C-G>', '<cmd>:Telescope git_files<CR>', { desc = 'git file search' })
