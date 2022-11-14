@@ -7,7 +7,9 @@ Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', {tag = '0.1.0'})
 Plug 'kelly-lin/telescope-ag'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
+Plug('akinsho/bufferline.nvim', { tag = 'v3.*' })
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
@@ -130,11 +132,9 @@ map('n', '<C-L><C-P>', '<cmd>:Telescope buffers<CR>', { desc = 'buffer search' }
 
 -- Status
 -------------------
-require'lualine'.setup { options = {
-  theme = 'solarized_dark',
-  section_separators = '',
-  component_separators = ''
-} }
+require'nvim-web-devicons'.setup{}
+require'lualine'.setup { options = { theme = 'solarized_dark' } }
+require'bufferline'.setup{}
 vim.opt.laststatus = 2
 vim.opt.cmdheight = 1
 vim.cmd'set noshowmode'
