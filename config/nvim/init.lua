@@ -151,6 +151,7 @@ vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
 
 -- Syntax
 -------------------
+vim.cmd'highlight ColorColumn ctermbg=black'
 vim.cmd'au BufRead,BufNewFile *.vcl :set ft=vcl' -- vcl filetype
 vim.cmd'au! Syntax vcl source ~/.vim/syntax/vim-syntax-vcl/vcl.vim'-- vcl syntax
 vim.cmd'au BufReadPost *.ezt set syntax=html'-- Hamlet files
