@@ -101,6 +101,36 @@ vim.cmd'autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0'
 -------------------
 map('', '<Leader>g', ':Goyo<cr>', { desc = 'Toggle Goyo' })
 
+local GoyoGroup = vim.api.nvim_create_augroup('GoyoGroup', { clear = true })
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'GoyoEnter',
+  group = GoyoGroup,
+  desc = 'Enter Goyo',
+  callback = function()
+    require('lualine').hide()
+    vim.cmd[[
+      if executable('tmux') && strlen($TMUX)
+        silent !tmux set status off
+        silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+      endif
+    ]]
+  end
+})
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'GoyoLeave',
+  group = GoyoGroup,
+  desc = 'Leaving Goyo',
+  callback = function()
+    require('lualine').hide({unhide = true})
+    vim.cmd[[
+      if executable('tmux') && strlen($TMUX)
+        silent !tmux set status on
+        silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+      endif
+    ]]
+  end
+})
+
 -- Diff
 -------------------
 vim.opt.diffopt:append('vertical')
