@@ -5,11 +5,11 @@ vim.call'plug#begin'
 
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', {tag = '0.1.0'})
+Plug('nvim-telescope/telescope.nvim', {tag = '0.1.6'})
 Plug 'kelly-lin/telescope-ag'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
-Plug('akinsho/bufferline.nvim', { tag = 'v3.*' })
+Plug('akinsho/bufferline.nvim', { tag = 'v4.*' })
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
@@ -207,19 +207,6 @@ autocmd BufEnter *
 
 -- orgmode
 -------------------
--- load custom tree-sitter grammar for org filetype
-require'orgmode'.setup_ts_grammar()
-
--- tree-sitter configuration
-require'nvim-treesitter.configs'.setup {
-  -- if ts highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default vim syntax highlighting
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = {'org'}, -- required for spellcheck, some latex highlights and code block highlights that do not have ts grammar
-  },
-  ensure_installed = {'org'}, -- or run :tsupdate org
-}
-
 require'orgmode'.setup {
   org_agenda_files = {'~/dropbox/org/*', '~/my-orgs/**/*'},
   org_default_notes_file = '~/dropbox/org/refile.org',
