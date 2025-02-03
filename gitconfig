@@ -1,6 +1,6 @@
 [user]
   name = Evan Rutledge Borden
-  email = eborden@frontrowed.com
+  email = evan.borden@nearpod.com
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ms = merge --squash
@@ -8,6 +8,7 @@
   pushf = push --force-with-lease
 [push]
   default = simple
+	autoSetupRemote = true
 
 [merge]
   renamelimit = 3000
