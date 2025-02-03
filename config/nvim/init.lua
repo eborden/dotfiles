@@ -5,7 +5,7 @@ vim.call'plug#begin'
 
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', {tag = '0.1.6'})
+Plug('nvim-telescope/telescope.nvim', {tag = '0.1.*'})
 Plug 'kelly-lin/telescope-ag'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
